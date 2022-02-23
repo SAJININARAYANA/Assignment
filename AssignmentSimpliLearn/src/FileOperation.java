@@ -1,9 +1,10 @@
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FileOperation {
 	
-	String filePath ="C:\\Java\\Prog\\File";
+	String filePath ="C:\\Java\\Prog\\File\\";
 
 	public static void main(String[] args) {
 		FileOperation fileOperation = new FileOperation();
@@ -113,10 +114,9 @@ public class FileOperation {
 	            	}
 	            }
 	        }
-
-	        
-      	
       }
+	  
+	  
 	  
 	  private void createFileInDirectory()
       {
@@ -124,7 +124,19 @@ public class FileOperation {
 		  System.out.println("Please Enter the File Name to be created");
 	        Scanner in = new Scanner(System.in);	 
 	        String fileName = in.nextLine();
-	        File directory = new File(filePath);
+	        
+	        try {
+	            File myObj = new File(filePath+fileName);
+	            System.out.println(filePath+fileName);
+	            if (myObj.createNewFile()) {
+	              System.out.println("File created: " + myObj.getName());
+	            } else {
+	              System.out.println("File already exists.");
+	            }
+	          } catch (IOException e) {
+	            System.out.println("An error occurred.");
+	            e.printStackTrace();
+	          }  
       	
       }
 	  
@@ -132,9 +144,16 @@ public class FileOperation {
       {
 		  // Using Scanner for Getting Input from User
 		  System.out.println("Please Enter the File Name to be deleted");
-	        Scanner in = new Scanner(System.in);	 
+		    Scanner in = new Scanner(System.in);	 
 	        String fileName = in.nextLine();
-	        File directory = new File(filePath);
+	        
+	        File myObj = new File(filePath+fileName);
+			System.out.println(filePath+fileName);
+			if (myObj.delete()) {
+			  System.out.println("Deleted the file: " + myObj.getName());
+			} else {
+			  System.out.println("Failed to delete the file.");
+			}  
       	
       }
 	  
