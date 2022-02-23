@@ -79,16 +79,62 @@ public class FileOperation {
 	  
 	  private void findFileInDirectory()
       {
+		  // Using Scanner for Getting Input from User
+		  System.out.println("Please Enter the File Name with Extention to to be find");
+	        Scanner in = new Scanner(System.in);	 
+	        String fileName = in.nextLine();
+	        File directory = new File(filePath);
+	        
+	     
+	  
+	        // store all names with same name 
+	        // with/without extension
+	        String[] flist = directory.list();
+	  
+	        // Empty array
+	        if (flist == null) {
+	            System.out.println(
+	                "Empty directory or directory does not exists.");
+	        }
+	        else {
+	  
+	            // Print all files with same name in directory
+	            // as provided in object of MyFilenameFilter
+	        	int count=0;
+	             for (int i = 0; i < flist.length; i++) {
+	            	if(flist[i].equalsIgnoreCase(fileName))
+	            	{
+	            		count++;
+	                System.out.println(flist[i]+" found");
+	            	}
+	            	else if(count ==0 && i==flist.length-1)
+	            	{
+	            		System.out.println(fileName +" file is not present in the directory please check the file name");
+	            	}
+	            }
+	        }
+
+	        
       	
       }
 	  
 	  private void createFileInDirectory()
       {
+		  // Using Scanner for Getting Input from User
+		  System.out.println("Please Enter the File Name to be created");
+	        Scanner in = new Scanner(System.in);	 
+	        String fileName = in.nextLine();
+	        File directory = new File(filePath);
       	
       }
 	  
 	  private void deleteFileInDirectory()
       {
+		  // Using Scanner for Getting Input from User
+		  System.out.println("Please Enter the File Name to be deleted");
+	        Scanner in = new Scanner(System.in);	 
+	        String fileName = in.nextLine();
+	        File directory = new File(filePath);
       	
       }
 	  
