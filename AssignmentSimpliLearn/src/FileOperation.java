@@ -25,6 +25,10 @@ public class FileOperation {
 		System.out.println("START DATE:Jan 15th 2022");
 		System.out.println("END DATE:  Feb 19th 2022");
 		System.out.println("********************************************");
+		int commandLineInput;
+		do
+		{
+		
 		System.out.println("------ENTER ANY OPTION----------------");
 		System.out.println("------Enter 1 to DISPLAY all the file in the directory asecnding order");
 		System.out.println("------Enter 2 to ADD/Delete/FIND the file in the directory");
@@ -33,7 +37,7 @@ public class FileOperation {
 		
 		//getting the value from command line
 		  Scanner in = new Scanner(System.in);		  
-          int commandLineInput = in.nextInt();
+          commandLineInput = in.nextInt();
 	        
 	        
         switch (commandLineInput) {
@@ -88,7 +92,8 @@ public class FileOperation {
            	   
            break;
         case 3:
-            
+        	System.out.println("Exiting Program...");
+            System.exit(0);
             break;
        
         default:
@@ -96,9 +101,11 @@ public class FileOperation {
            mainMenu();
            break;
         }
-        
-      
-	}
+		}
+		while(commandLineInput!=3);
+		}	
+		
+	
 
 	  private void displayAllFileInDirectory()
       {
