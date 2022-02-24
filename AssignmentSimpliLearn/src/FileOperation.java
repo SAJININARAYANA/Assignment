@@ -42,11 +42,50 @@ public class FileOperation {
             displayAllFileInDirectory();
             break;
         case 2:
-           createFileInDirectory();
-           findFileInDirectory();
-           deleteFileInDirectory();
-           mainMenu();
-           
+        	 int enterOption;
+        	do
+            {
+        	System.out.println("------ENTER ANY OPTION----------------");
+    		System.out.println("------Enter 01 to ADD FILE IN THE DIRECTORY");
+    		System.out.println("------Enter 02 to SEARCH FILE IN THE DIRECTORY");
+    		System.out.println("------Enter 03 to DELETE FILE IN THE DIRECTORY");
+    		System.out.println("------Enter 04 to EXIT");
+    		Scanner innew = new Scanner(System.in);		  
+             enterOption = innew.nextInt();
+    		
+            
+        	switch(enterOption) 
+        	  {
+        	    
+                 case 01:
+        	    	System.out.println("ADD FILE TO THE DIRECTORY");
+        	    	createFileInDirectory();;
+        	      break;
+        	      
+        	   
+        	    case 02: 
+        	    	System.out.println("SEARCH FILE IN THE DIRECTORY");
+        	    	findFileInDirectory();
+        	      break;
+        	      
+        	 
+        	    case 03: 
+        	    	System.out.println("DELETE FILE IN THE DIRECTORY");
+        	    	deleteFileInDirectory();
+        	      break;
+        	      
+        	    case 04:
+        	    	System.out.println("Exiting Program...");
+                    System.exit(0);
+        	      
+        	      // code to be executed if num 
+        	      // doesn't match any cases
+        	      default: 
+        	  }
+        }
+        	while(enterOption!=04);
+        	
+           	   
            break;
         case 3:
             
