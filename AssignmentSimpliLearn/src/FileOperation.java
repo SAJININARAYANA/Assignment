@@ -79,8 +79,8 @@ public class FileOperation {
         	      break;
         	      
         	    case 04:
-        	    	System.out.println("Exiting Program...");
-                    System.exit(0);
+        	    	System.out.println("GO TO MAIN MENU ...");
+                    break;
         	      
         	      // code to be executed if num 
         	      // doesn't match any cases
