@@ -27,10 +27,9 @@ public class FileOperation {
 		System.out.println("********************************************");
 		System.out.println("------ENTER ANY OPTION----------------");
 		System.out.println("------Enter 1 to DISPLAY all the file in the directory asecnding order");
-		System.out.println("------Enter 2 to SEARCH/FIND the file in the directory");
-		System.out.println("------Enter 3 to CREATE the file in the directory");
-		System.out.println("------Enter 4 to DELETE the file in the directory");
-		System.out.println("------Enter 5 to MAIN MENU ");
+		System.out.println("------Enter 2 to ADD/Delete/FIND the file in the directory");
+		System.out.println("------Enter 3 to EXIT");
+		
 		
 		//getting the value from command line
 		  Scanner in = new Scanner(System.in);		  
@@ -39,19 +38,18 @@ public class FileOperation {
 	        
         switch (commandLineInput) {
         case 1:
+        	System.out.println("DISPLAY ALL FINE IN DIRECTORY IN ACSENDING ORDER");
             displayAllFileInDirectory();
             break;
         case 2:
+           createFileInDirectory();
            findFileInDirectory();
-            break;
+           deleteFileInDirectory();
+           mainMenu();
+           
+           break;
         case 3:
-            createFileInDirectory();
-            break;
-        case 4:
-            deleteFileInDirectory();
-            break;
-        case 5:
-            mainMenu();
+            
             break;
        
         default:
