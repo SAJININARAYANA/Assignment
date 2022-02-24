@@ -35,7 +35,7 @@ public class FileOperation {
 		System.out.println("------Enter 3 to EXIT");
 		
 		
-		//getting the value from command line
+		//getting the value from commandline
 		  Scanner in = new Scanner(System.in);		  
           commandLineInput = in.nextInt();
 	        
