@@ -1,5 +1,8 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class FileOperation {
@@ -43,7 +46,7 @@ public class FileOperation {
         switch (commandLineInput) {
         case 1:
         	System.out.println("DISPLAY ALL FINE IN DIRECTORY IN ACSENDING ORDER");
-            displayAllFileInDirectory();
+        	displayAscendingorder();
             break;
         case 2:
         	 int enterOption;
@@ -210,11 +213,33 @@ public class FileOperation {
       	
       }
 	  
-	  private void mainMenu()
+	  private void displayAscendingorder()
       {
-      	
-      }
+		  File fileDir = new File(filePath);
+			if(fileDir.isDirectory()){
+				List<String> listFile = Arrays.asList(fileDir.list());
+				System.out.println("Listing files unsorted");
+				for(String s:listFile){
+					System.out.println(s);
+				}
+				Collections.sort(listFile);
+				System.out.println("---------------------------------------");
+				System.out.println("Sorting by filename in ascending order");
+				for(String s:listFile){
+					System.out.println(s);
+				}
+			}
+				else
+				{
+					System.out.println(fileDir.getAbsolutePath() + " is not a directory");
+				}
+			}
+      
 	  
 	
-	
-}
+	private void mainMenu()
+	{
+		
+	}
+	}
+
